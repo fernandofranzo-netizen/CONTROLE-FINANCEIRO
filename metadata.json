@@ -1,0 +1,8 @@
+{
+  "name": "Controle Financeiro Pro",
+  "description": "Sistema completo de gestão de finanças pessoais com dashboard interativo, calendário financeiro, notificações de pagamentos pendentes e exportação de relatórios mensais detalhados.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
