@@ -3,7 +3,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import dotenv from 'dotenv';
 import express, { Request, Response } from 'express';
-import { createServer as createViteServer } from 'vite';
 
 dotenv.config();
 
@@ -394,6 +393,7 @@ async function startServer() {
   });
 
   if (process.env.NODE_ENV !== 'production') {
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',
@@ -407,7 +407,7 @@ async function startServer() {
     });
   }
 
-  const port = 3000;
+  const port = Number(process.env.PORT) || 3000;
   app.listen(port, '0.0.0.0', () => {
     console.log(`Controle Financeiro Pro server running on http://0.0.0.0:${port}`);
   });
